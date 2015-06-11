@@ -16,13 +16,8 @@ public class AddressFacade {
 	@PersistenceContext(unitName="unit-project")
 	private EntityManager em;
 	
-	/* the address will be created at the same time of the registration of a new customer
-	 * because of we don't have to get all the existing addresses in the DB */
-	
-    public Address createAddress(Long id, String street, String city, String state, String zipcode, String country) {
-		Customer customer = this.em.find(Customer.class, id);
+    public Address createAddress(String street, String city, String state, String zipcode, String country) {
 		Address address = new Address(street, city, state, zipcode, country);
-		customer.setAddress(address);
 		this.em.persist(address);
 		return address;
 	}
@@ -32,7 +27,6 @@ public class AddressFacade {
 		return address;
 	}
 	
-
 	public List<Address> getAllAddreses() {
 		CriteriaQuery<Address> cq = em.getCriteriaBuilder().createQuery(Address.class);
 		cq.select(cq.from(Address.class));
