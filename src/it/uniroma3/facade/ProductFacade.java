@@ -1,0 +1,57 @@
+package it.uniroma3.facade;
+
+import it.uniroma3.model.*;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaQuery;
+
+@Stateless(name="productFacade")
+public class ProductFacade {
+	
+	@PersistenceContext(unitName = "unit-project")
+    private EntityManager em;
+    
+	public Product createProduct(String name, String code, Float price, String description) {
+		Product product = new Product(name, price, description, code);
+		em.persist(product);
+		return product;
+	}
+	
+	public Product getProduct(Long id) {
+	    Product product = em.find(Product.class, id);
+		return product;
+	}
+	
+	public Product getProduct(String name) {
+		TypedQuery<Product> query = em.createQuery("SELECT p FROM Product p WHERE p.name =:name", Product.class);
+		return query.setParameter("name", name).getSingleResult();
+	}
+	
+	public List<Product> getAllProducts() {
+        CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
+        cq.select(cq.from(Product.class));
+        List<Product> products = em.createQuery(cq).getResultList();
+		return products;
+	}
+	
+	public void updateProduct(Product product) {
+        em.merge(product);
+	}
+	
+	private void deleteProduct(Product product) {
+        em.remove(product);
+    }
+
+	public void deleteProduct(Long id) {
+        Product product = em.find(Product.class, id);
+        deleteProduct(product);
+	}
+
+	
+	
+}
