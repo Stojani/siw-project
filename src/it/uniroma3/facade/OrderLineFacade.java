@@ -37,7 +37,7 @@ public class OrderLineFacade {
 		this.em.merge(order);
 	}
 	
-	public OrderLine addOrderLineToOrder(Long id, Product product, Integer quantity) {
+	public OrderLine createOrderLine(Long id, Product product, Integer quantity) {
 		OrderLine orderLine = new OrderLine(product, quantity);
 		Order order = this.em.find(Order.class, id);
 		order.addOrderLine(orderLine);
