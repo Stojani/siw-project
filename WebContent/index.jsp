@@ -17,10 +17,10 @@
 		</p>
 		<h:form>
 		<ul>
-		 <li><a href="loginCustomer.html">Login</a></li>
-		<li><a href="loginAdministrator.html">Login as Administrator</a></li>
-		<li><a href="SignUpCustomer.html">Sign up</a></li>
-		<li><a href="ProductsCatalog.html">Browse our products</a></li>
+		 <li><a href="loginCustomer.jsp">Login</a></li>
+		<li><a href="loginAdministrator.jsp">Login as Administrator</a></li>
+		<li><a href="SignUpCustomer.jsp">Sign up</a></li>
+		<li><a href="ProductsCatalog.jsp">Browse our products</a></li>
 		</ul>
 		</h:form>
 	</f:view>
