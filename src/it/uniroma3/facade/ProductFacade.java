@@ -52,6 +52,13 @@ public class ProductFacade {
 		return providers;
 	}
 	
+	public void addProductToProvider(Long productId, Long providerId) {
+		Product product = this.em.find(Product.class, productId);
+		Provider provider = this.em.find(Provider.class, providerId);
+		provider.addProduct(product);
+	}
+	
+	
 	public void updateProduct(Product product) {
         em.merge(product);
 	}

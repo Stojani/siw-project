@@ -8,10 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.OrderBy;
+
 
 @Entity
 public class Provider {
@@ -36,9 +35,7 @@ public class Provider {
 		@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	    private Address address;
 		
-		@ManyToMany(mappedBy="provider")
-		@JoinColumn(name = "provider")
-		@OrderBy("name")
+		@ManyToMany
 		private List<Product> products;
 		
 		
@@ -52,6 +49,10 @@ public class Provider {
 	        this.email = email;
 	        this.vatin = vatin;
 	        this.address = address;
+		}
+		
+		public void addProduct(Product product) {
+			this.products.add(product);
 		}
 		
 		/* GETTERS & SETTERS */
