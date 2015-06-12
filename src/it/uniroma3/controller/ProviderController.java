@@ -43,7 +43,7 @@ public class ProviderController {
 		return "provider";
 	}
 	
-	public String findProduct(Long id) {
+	public String findProvider(Long id) {
 		this.provider = providerFacade.getProvider(id);
 		return "provider";
 	}
