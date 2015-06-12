@@ -1,11 +1,16 @@
 package it.uniroma3.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.Column;
+import javax.persistence.OrderBy;
 
 	@Entity
 	@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
@@ -29,6 +34,11 @@ import javax.persistence.Column;
 	
 	@Column(nullable = true)
 	private int stockQuantity;
+	
+	@ManyToMany(mappedBy="product")
+	@JoinColumn(name = "product")
+	@OrderBy("name")
+	private List<Provider> providers;
 	
 	public Product() {
     }
@@ -89,6 +99,14 @@ import javax.persistence.Column;
 
 	public void setStockQuantity(int stockQuantity) {
 		this.stockQuantity = stockQuantity;
+	}
+
+	public List<Provider> getProviders() {
+		return providers;
+	}
+
+	public void setProviders(List<Provider> providers) {
+		this.providers = providers;
 	}
 
 	public boolean equals(Object obj) {

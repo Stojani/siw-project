@@ -1,10 +1,17 @@
 package it.uniroma3.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Provider {
@@ -26,8 +33,13 @@ public class Provider {
 		@Column(nullable = false)
 		private String vatin;
 		
-		@Column(nullable = false)
-		private Address address;
+		@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	    private Address address;
+		
+		@ManyToMany(mappedBy="provider")
+		@JoinColumn(name = "provider")
+		@OrderBy("name")
+		private List<Product> products;
 		
 		
 		public Provider(){
@@ -90,6 +102,14 @@ public class Provider {
 
 		public void setAddress(Address address) {
 			this.address = address;
+		}
+
+		public List<Product> getProducts() {
+			return products;
+		}
+
+		public void setProducts(List<Product> products) {
+			this.products = products;
 		}
 
 		@Override

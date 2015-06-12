@@ -39,6 +39,19 @@ public class ProductFacade {
 		return products;
 	}
 	
+	public List<Product> getProviderProducts(Long providerId) {
+		Provider provider = this.em.find(Provider.class, providerId);
+		return provider.getProducts();
+	}
+	
+	public List<Provider> getProvidersFromProductId(Long id) throws Exception {
+		Product product = this.em.find(Product.class, id);
+		if(product == null)
+			throw new Exception();
+		List<Provider> providers = product.getProviders();
+		return providers;
+	}
+	
 	public void updateProduct(Product product) {
         em.merge(product);
 	}
