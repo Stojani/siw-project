@@ -19,7 +19,7 @@
 		<ul>
 		 <li><a href="loginCustomer.html">Login</a></li>
 		<li><a href="loginAdministrator.html">Login as Administrator</a></li>
-		<li><a href="registerCustomer.html">Sign up</a></li>
+		<li><a href="SignUpCustomer.html">Sign up</a></li>
 		<li><a href="ProductsCatalog.html">Browse our products</a></li>
 		</ul>
 		</h:form>
