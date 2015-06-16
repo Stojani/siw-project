@@ -7,10 +7,6 @@
     <meta name="description" content="e-commerce web site">
     <meta name="author" content="Stojani">
     <link rel="icon" href="../../favicon.ico">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <title>E-COMMERCE WEB SITE</title>
 
@@ -32,7 +28,7 @@
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">E-COMMERCE</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -67,7 +63,7 @@
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="home" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#home" data-slide-to="0" class="active"></li>
@@ -76,11 +72,11 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img class="first-slide" src="http://informatica.digitalmatik.com/e107_images/custom/e-commerce3.png" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>WELCOME TO THE E-COMMERCE WEB SITE</h1>
-              <p>If you're interested about our products and wanna make an order you've to be registered as a customer </p>
+              <p>If you're interested about our products and wont to make an order you've to be registered as a customer </p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up now</a></p>
             </div>
           </div>
