@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="e-commerce web site">
     <meta name="author" content="Stojani">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>E-COMMERCE WEB SITE</title>
 
@@ -77,7 +76,7 @@
             <div class="carousel-caption">
               <h1>WELCOME TO THE E-COMMERCE WEB SITE</h1>
               <p>If you're interested about our products and wont to make an order you've to be registered as a customer </p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="faces/signUpCustomer.jsp" role="button">Sign up now</a></p>
             </div>
           </div>
         </div>
@@ -87,7 +86,7 @@
             <div class="carousel-caption">
               <h1>Login</h1>
               <p>If you're already registered as an our customer you can login here</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Login now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="faces/loginCustomer.jsp" role="button">Login now</a></p>
             </div>
           </div>
         </div>
