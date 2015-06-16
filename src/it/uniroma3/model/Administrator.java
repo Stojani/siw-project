@@ -2,9 +2,13 @@ package it.uniroma3.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Persistence;
 
 @Entity
 public class Administrator {
@@ -81,6 +85,25 @@ public class Administrator {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("unit-project");
+		EntityManager em = emf.createEntityManager();
+
+		Administrator administrator = new Administrator();
+		administrator.setFirstName("Marjo");
+		administrator.setLastName("Stojani");
+		administrator.setEmail("email@email.it");
+		administrator.setPassword("pwdbo");
+
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		em.persist(administrator);
+		tx.commit();
+
+		em.close();
+		emf.close();
 	}
 
 }

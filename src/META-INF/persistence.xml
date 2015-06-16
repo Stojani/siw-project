@@ -18,6 +18,7 @@
 			<property name="openjpa.jdbc.DBDictionary" value="postgres" />
 			<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
   			<property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict,JoinForeignKeyDeleteAction=restrict"/>
+
 		</properties>
 	</persistence-unit>
 </persistence>

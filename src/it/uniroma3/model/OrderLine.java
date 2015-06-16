@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OrderLine {
@@ -19,9 +20,11 @@ public class OrderLine {
 	@Column(nullable = false)
 	private Integer quantity;
 	
+	@ManyToOne
 	@Column(nullable = false)
 	private Order order;
 	
+	@ManyToOne
 	@Column(nullable = false)
 	private Product product;
 	
