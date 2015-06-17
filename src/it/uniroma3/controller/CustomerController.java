@@ -8,6 +8,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 
 
+
 @ManagedBean
 @SessionScoped
 public class CustomerController {
@@ -17,8 +18,16 @@ public class CustomerController {
 
 	private String email;
 	private String password;
+	private String firstName;
+	private String lastName;
+	private String phoneNumber;
 	private Customer customer;
+	private java.util.Date dateOfBirth;
 	private String errMessage;
+	
+	public void createCustomer() {
+		this.customer=customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, dateOfBirth);
+	}
 	
 	public String Login() {
 		try {
@@ -53,6 +62,39 @@ public class CustomerController {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public java.util.Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(java.util.Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public Customer getCustomer() {

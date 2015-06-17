@@ -76,7 +76,7 @@
             <div class="carousel-caption">
               <h1>WELCOME TO THE E-COMMERCE WEB SITE</h1>
               <p>If you're interested about our products and wont to make an order you've to be registered as a customer </p>
-              <p><a class="btn btn-lg btn-primary" href="faces/signUpCustomer.jsp" role="button">Sign up now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="signUpCustomer.jsp" role="button">Sign up now</a></p>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
             <div class="carousel-caption">
               <h1>Login</h1>
               <p>If you're already registered as an our customer you can login here</p>
-              <p><a class="btn btn-lg btn-primary" href="faces/loginCustomer.jsp" role="button">Login now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="loginCustomer.jsp" role="button">Login now</a></p>
             </div>
           </div>
         </div>
@@ -95,8 +95,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Browse our catalog</h1>
-              <p>If you wanna browse our products (isn't necessary to be our customer)</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse now</a></p>
+              <p>If you wont to browse our products (isn't necessary to be our customer)</p>
+              <p><a class="btn btn-lg btn-primary" href="productsCatalog.jsp" role="button">Browse now</a></p>
             </div>
           </div>
         </div>
