@@ -38,11 +38,11 @@ public class OrderController {
 		return "confirm Order";
 	}
 	
-	public String confirmOrder() {
-		List<Order> orders = orderFacade.getCustomerOrders(this.customer.getId());
-		this.orders=orders;
-		return "customerArea";
-	}
+	//public String confirmOrder() {
+	//	List<Order> orders = orderFacade.getCustomerOrders(this.customer.getId());
+		//this.orders=orders;
+	//	return "customerArea";
+	//}
 	
 	public String cancelOrder() {
 		orderFacade.deleteOrder(order);

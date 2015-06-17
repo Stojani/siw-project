@@ -2,18 +2,15 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
-import it.uniroma3.facade.ProductFacade;
 import it.uniroma3.model.Product;
+import it.uniroma3.facade.ProductFacade;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
 public class ProductController {
-	
-	@EJB
-	private ProductFacade productFacade;
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
@@ -21,10 +18,11 @@ public class ProductController {
 	private Float price;
 	private String description;
 	private String code;
-	private int stockQuantity;
 	private Product product;
 	private List<Product> products;
 	
+	@EJB
+	private ProductFacade productFacade;
 	
 	public String createProduct() {
 		this.product = productFacade.createProduct(name, code, price, description);
@@ -45,8 +43,7 @@ public class ProductController {
 		this.product = productFacade.getProduct(id);
 		return "product";
 	}
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -102,13 +99,6 @@ public class ProductController {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-
-	public int getStockQuantity() {
-		return stockQuantity;
-	}
-
-	public void setStockQuantity(int stockQuantity) {
-		this.stockQuantity = stockQuantity;
-	}
-
 }
+
+

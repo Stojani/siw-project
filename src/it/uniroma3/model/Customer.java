@@ -36,10 +36,10 @@ public class Customer {
 	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Address address;
 	
-	@OneToMany(mappedBy="customer")
-	@JoinColumn(name = "customer")
-	@OrderBy("creationdate asc")
-	private List<Order> orders;
+//	@OneToMany(mappedBy="customer")
+//	@JoinColumn(name = "customer")
+//	@OrderBy("creationdate asc")
+//	private List<Order> orders;
 
 	public Customer(){
 	}
@@ -54,7 +54,7 @@ public class Customer {
         this.dateOfBirth = dateOfBirth;
         this.address = null;
         this.registrationDate = new Date();
-        this.orders = new ArrayList<Order>();
+   //     this.orders = new ArrayList<Order>();
 	}
 	
 	public void checkPassword(String password) throws Exception {
@@ -63,9 +63,9 @@ public class Customer {
 		}
 	}
 	
-	public void addOrder(Order order) {
-		this.orders.add(order);
-	}
+//	public void addOrder(Order order) {
+	//	this.orders.add(order);
+	//}
 	
 	/*    GETTERS & SETTERS  */
 
@@ -133,13 +133,13 @@ public class Customer {
 		this.address = address;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
+//	public List<Order> getOrders() {
+	//	return orders;
+	//}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
+	//public void setOrders(List<Order> orders) {
+		//this.orders = orders;
+	//}
 
 	@Override
 	public int hashCode() {

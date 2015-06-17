@@ -17,7 +17,7 @@ public class OrderFacade {
 	public Order createOrder(Long id) {
 		Customer customer = this.em.find(Customer.class, id);
 		Order order = new Order(customer);
-		customer.addOrder(order);
+	//	customer.addOrder(order);
 		this.em.persist(order);
 		this.em.merge(customer);
 		return order;
@@ -49,10 +49,10 @@ public class OrderFacade {
 		this.em.remove(order);
 	}
 
-	public List<Order> getCustomerOrders(Long customerId) {
-		Customer customer = this.em.find(Customer.class, customerId);
-		return customer.getOrders();
-	}
+	//public List<Order> getCustomerOrders(Long customerId) {
+	//	Customer customer = this.em.find(Customer.class, customerId);
+//		return customer.getOrders();
+//	}
 	
 	public Customer getCustomerFromOrderId(Long id) throws Exception {
 		Order order = this.em.find(Order.class, id);
