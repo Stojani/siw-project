@@ -44,7 +44,7 @@
               <input type="password" class="form-control input-lg" placeholder="Password">
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+              <a href="adminDashboard.jsp" class="btn btn-primary btn-lg btn-block">Sign In</a>
             </div>
           </form>
       </div>
