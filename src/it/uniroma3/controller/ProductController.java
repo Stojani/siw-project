@@ -6,10 +6,12 @@ import it.uniroma3.model.Product;
 import it.uniroma3.facade.ProductFacade;
 
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
+@SessionScoped
 public class ProductController {
 	
 	@ManagedProperty(value="#{param.id}")
@@ -26,12 +28,12 @@ public class ProductController {
 	
 	public String createProduct() {
 		this.product = productFacade.createProduct(name, code, price, description);
-		return "product"; 
+		return "productDetails.xhtml"; 
 	}
 	
-	public String listProducts() {
+	public List<Product> listProducts() {
 		this.products = productFacade.getAllProducts();
-		return "products"; 
+		return products; 
 	}
 
 	public String findProduct() {

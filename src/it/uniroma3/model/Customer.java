@@ -28,7 +28,7 @@ public class Customer {
 	private String phoneNumber;
 	
 	@Temporal(TemporalType.DATE)
-	private java.util.Date dateOfBirth;
+	private Date dateOfBirth;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date registrationDate;
@@ -45,13 +45,13 @@ public class Customer {
 	}
 	
 	public Customer(String firstName, String lastName, String email, String password, String phoneNumber,
-			        Date dateOfBirth) {
+			        String dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = java.sql.Date.valueOf(dateOfBirth);
         this.address = null;
         this.registrationDate = new Date();
    //     this.orders = new ArrayList<Order>();
@@ -99,6 +99,14 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getPhoneNumber() {

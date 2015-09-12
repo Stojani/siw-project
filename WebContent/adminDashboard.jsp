@@ -42,12 +42,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Administrator</a> 
+                <a class="navbar-brand">Administrator</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">Admin: Stojani &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -62,7 +62,7 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="login.html" class="btn btn-dang
                         <a class="active-menu"  href="adminDashboard.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                        <a  href="newProduct.jsp"><i class="fa fa-desktop fa-3x"></i> Insert new Product</a>
+                        <a  href="newProduct.xhtml"><i class="fa fa-desktop fa-3x"></i> Insert new Product</a>
                     </li>	
                       <li  >
                         <a  href="table.html"><i class="fa fa-table fa-3x"></i> Find Customer by orderId</a>

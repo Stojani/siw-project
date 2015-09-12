@@ -11,10 +11,12 @@ import it.uniroma3.model.Product;
 
 import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedProperty;
 
 
 @ManagedBean
+@SessionScoped
 public class OrderLineController {
 	
 	@EJB

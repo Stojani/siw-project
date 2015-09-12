@@ -15,7 +15,7 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless(name="administratorFacade")
 public class AdministratorFacade {
 	
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
 	public Administrator createAdministrator(String firstName, String lastName, String email, String password) {

@@ -8,12 +8,11 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless(name="productFacade")
 public class ProductFacade {
 	
-	@PersistenceContext(unitName = "unit-project")
+	@PersistenceContext(unitName = "unit-siwProject")
     private EntityManager em;
     
 	public Product createProduct(String name, String code, Float price, String description) {
@@ -33,10 +32,13 @@ public class ProductFacade {
 	}
 	
 	public List<Product> getAllProducts() {
-        CriteriaQuery<Product> cq = em.getCriteriaBuilder().createQuery(Product.class);
-        cq.select(cq.from(Product.class));
-        List<Product> products = em.createQuery(cq).getResultList();
-		return products;
+		try {
+			TypedQuery<Product> query = em.createNamedQuery("findAllProducts", Product.class);
+			List<Product> productList = query.getResultList();
+			return productList;
+		} catch (Exception e){
+			return null;
+		}
 	}
 	
 	public List<Product> getProviderProducts(Long providerId) {

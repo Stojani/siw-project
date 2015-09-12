@@ -13,7 +13,7 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless(name="addressFacade")
 public class AddressFacade {
 	
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
     public Address createAddress(String street, String city, String state, String zipcode, String country) {

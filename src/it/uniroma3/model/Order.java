@@ -5,17 +5,16 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@NamedQuery(name = "findAllOrders", query = "SELECT o FROM Order o")
+@Table(name="orders")
 public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Temporal(TemporalType.DATE)
-	private java.util.Date creationTime;
+	@Temporal(value=TemporalType.TIMESTAMP)
+	private Date creationTime;
 
-	
 	@ManyToOne
 	private Customer customer;
 	

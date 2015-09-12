@@ -2,15 +2,15 @@ package it.uniroma3.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
 import javax.persistence.Column;
-import javax.persistence.OrderBy;
+
 
 	@Entity
 	@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
@@ -35,9 +35,7 @@ import javax.persistence.OrderBy;
 	@Column(nullable = true)
 	private int stockQuantity;
 	
-	@ManyToMany(mappedBy="product")
-	@JoinColumn(name = "product")
-	@OrderBy("name")
+	@ManyToMany(mappedBy="products", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Provider> providers;
 	
 	public Product() {

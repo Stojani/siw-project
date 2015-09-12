@@ -13,13 +13,13 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless(name="customerFacade")
 public class CustomerFacade {
 
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 
 	
 
 	public Customer createCustomer(String firstName, String lastName, String email, String password, String phoneNumber,
-	        Date dateOfBirth) {
+	        String dateOfBirth) {
 		Customer customer = new Customer(firstName, lastName, email, password, phoneNumber, dateOfBirth);
 		this.em.persist(customer);
 		return customer;

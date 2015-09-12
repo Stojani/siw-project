@@ -12,7 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless(name="providerFacade")
 public class ProviderFacade {
 
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
 	public Provider createProvider(String name, String phoneNumber, String email, String vatin, Address address) {

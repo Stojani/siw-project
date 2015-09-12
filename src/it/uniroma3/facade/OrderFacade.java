@@ -11,7 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless(name="orderFacade")
 public class OrderFacade {
 	
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
 	public Order createOrder(Long id) {

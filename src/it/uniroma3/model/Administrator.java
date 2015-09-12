@@ -87,8 +87,8 @@ public class Administrator {
 		this.password = password;
 	}
 	
-	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("unit-project");
+/*	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("unit-siwProject");
 		EntityManager em = emf.createEntityManager();
 
 		Administrator administrator = new Administrator();
@@ -104,6 +104,6 @@ public class Administrator {
 
 		em.close();
 		emf.close();
-	}
+	}  */
 
 }

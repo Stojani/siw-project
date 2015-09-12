@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 @Stateless(name="orderLineFacade")
 public class OrderLineFacade {
 
-	@PersistenceContext(unitName="unit-project")
+	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
 	public OrderLine getOrderLine(Long id) {

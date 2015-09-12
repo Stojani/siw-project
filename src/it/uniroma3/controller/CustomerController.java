@@ -22,7 +22,7 @@ public class CustomerController {
 	private String lastName;
 	private String phoneNumber;
 	private Customer customer;
-	private java.util.Date dateOfBirth;
+	private String dateOfBirth;
 	private String errMessage;
 	
 	public void createCustomer() {
@@ -89,11 +89,11 @@ public class CustomerController {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public java.util.Date getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(java.util.Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

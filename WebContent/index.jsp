@@ -96,7 +96,7 @@
             <div class="carousel-caption">
               <h1>Browse our catalog</h1>
               <p>If you wont to browse our products (isn't necessary to be our customer)</p>
-              <p><a class="btn btn-lg btn-primary" href="productsCatalog.jsp" role="button">Browse now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="productsCatalog.xhtml" role="button">Browse now</a></p>
             </div>
           </div>
         </div>
