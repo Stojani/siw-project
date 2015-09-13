@@ -38,7 +38,7 @@ public class ProductController {
 
 	public String findProduct() {
 		this.product = productFacade.getProduct(id);
-		return "product";
+		return "productDetails.xhtml";
 	}
 	
 	public String findProduct(Long id) {

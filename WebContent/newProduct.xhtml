@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+<h:head>
+	<title>Create Product</title>
+</h:head>
+
+
+<h:body> 
+<f:view>
+ <div class="text-center">
+  	<h1 class="page-header"><font size="5">Create a new Product</font>
+  	</h1>
+ </div>
+	<div class="container" style="width:50%; margin:0 auto">
+		<h:form style="background-color:#54FF9F">
+		
+	 		<div><strong>Name:</strong><br></br>
+	 		     <h:inputText value="#{productController.name}" 
+                     required="true"
+                     requiredMessage="Name is mandatory"
+                     id="name"/> <h:message for="name" />
+	       </div>
+           <div><strong>Code:</strong><br></br>
+                <h:inputText value="#{productController.code}" 
+                     required="true"
+                     requiredMessage="Code is mandatory"
+                     id="code"/> <h:message for="code" />
+	       </div>
+           <div><strong>Price:</strong><br></br>
+                <h:inputText value="#{productController.price}" 
+                     required="true"
+                     requiredMessage="Price is mandatory"
+                     converterMessage="Price must be a number"
+                     id="price"/> <h:message for="price" />
+	       </div>
+           <div><strong>Description:</strong><br></br>
+                <h:inputTextarea value="#{productController.description}" 
+    				required="false" 
+    				cols="20" 
+    				rows="4" /> 
+                     
+	       </div>
+	       <div>
+		   <h:commandButton class="btn btn-primary" value="Submit"  
+		                    action="#{productController.createProduct}" />
+	       </div>
+
+		</h:form>
+	</div>
+</f:view>
+</h:body>
+
+</html>

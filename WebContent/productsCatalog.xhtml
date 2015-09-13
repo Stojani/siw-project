@@ -83,30 +83,6 @@ a.list-group-item.active,[class*='-info'] {
 	background-color: #168ccc;
     color:#dedeff;
 }
-  
-#section2 {
-	background-color: #e5e5ef;
-    color:#686868;
-}
-  
-#section3 {
-	background-color: #168ccc;
-    color:#ddd;
-}
-
-#section4 {
-	background-color: #fff;
-    color:#444;
-}
-
-#section5,#section7,#section7 a {
-    color:#f5f5f5;
-}
-
-#section6 {
-	background-color: #168ccc;
-    color:#ddd;
-}
 
 footer {
 	background-color:#494949;
@@ -129,8 +105,8 @@ footer .nav>li>a:hover {
     <script id="_carbonads_projs" type="text/javascript" src="//srv.carbonads.net/ads/C6AILKT.json?segment=placement:bootplycom&amp;callback=_carbonads_go"></script><script type="text/javascript" src="//adn.fusionads.net/launchbit/9533/developers//bootplycom/8?144181513"></script></head>
 <body>
 <f:view>
-<!-- Navigation -->
-<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+ <!-- Navigation -->
+ <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
@@ -139,31 +115,18 @@ footer .nav>li>a:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" >E-COMMERCE</a>
     </div>
     <div class="navbar-collapse collapse" id="navbar-collapsible">
       <ul class="nav navbar-nav navbar-left">
-        <li class="active"><a href="#section1">What</a></li>
-        <li><a href="#section2">When</a></li>
-        <li><a href="#section3">How</a></li>
-        <li><a href="#section4">Four</a></li>
-        <li><a href="#section5">Five</a></li>
-        <li><a href="#section6">Why</a></li>
-        <li><a href="#section7">Who</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="loginCustomer.jsp">Login</a></li>
+        <li><a href="signUpCustomer.jsp">Sign Up</a></li>
+        <li><a href="#section4">Contact</a></li>
       </ul>
       <form class="navbar-form">
         <div class="form-group" style="display:inline;">
           <div class="input-group"> 
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-                <li><a href="#">Category 4</a></li>
-                <li><a href="#">Category 5</a></li> 
-              </ul>
-            </div>
             <input type="text" class="form-control" placeholder="What are searching for?"></input>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -171,9 +134,9 @@ footer .nav>li>a:hover {
       </form>
     </div>
   </div>
-</nav>
+ </nav>
 <!-- Page Content -->
-<section class="container-fluid" id="section1">
+ <section class="container-fluid" id="section1">
  <div class="text-center">
   	<h1 class="page-header"><font size="4">we have all you need</font>
   	</h1>
@@ -183,33 +146,22 @@ footer .nav>li>a:hover {
      </div>
   <!-- <div class="container"> -->
   <h:form>
-     <table class="table table-striped" style="width:50%; margin:0 auto">
-    <tr>
+     <table class="table table-condensed" style="width:50%; margin:0 auto; background-color:white">
+      <tr>
 		<th><font color="blue">Name</font></th><th><font color="red">Price</font></th>
-    </tr>
-    <c:forEach var="product" items="#{productController.listProducts()}">
+      </tr>
+      <c:forEach var="product" items="#{productController.listProducts()}">
 		<tr><td>
-		<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
+		<font color="black">
+		 <h:commandLink action="#{productController.findProduct}" value="#{product.name}" >
 			<f:param name="id" value="#{product.id}" />
-		</h:commandLink>
-		</td><td>${product.price}</td></tr>
-	</c:forEach>
-    
-  </table>
+		 </h:commandLink>
+		</font></td>
+		<td><font color="black">${product.price}</font></td></tr>
+	  </c:forEach>    
+    </table>
   </h:form>
-<!-- <h:form>
-			<ul class="list-group">
-				<c:forEach var="product" items="#{productController.products }">
-					<li class="list-group-item">Nome: <h:commandLink
-							action="#{productController.findProduct}" value="#{product.name}">
-							<f:param name="id" value="#{product.id}" />
-						</h:commandLink> - Prezzo: ${product.price}
-					</li>
-				</c:forEach>
-			</ul>
-		</h:form> -->
-	<!-- 	</div> -->
-</section>
+ </section>
 
 </f:view>   
 
