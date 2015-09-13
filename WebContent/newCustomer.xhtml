@@ -1,33 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:c="http://java.sun.com/jsp/jstl/core">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="e-commerce web site">
-    <meta name="author" content="Stojani">
-<title>SignUp Customer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>New Customer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta name="description" content="e-commerce web site"></meta>
+    <meta name="author" content="Stojani"></meta>
+   <title>Insert a new Customer</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
     <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<!-- Custom styles for this template -->
-	<link href="boostrap/css/login.css" rel="stylesheet">
+	<link href="boostrap/css/login.css" rel="stylesheet"></link>
 	
 </head>
 <body>
  <div class="container">
  <div class="modal-dialog">
  
-       <h2 class="text-center">Sign up</h2>
+       <h2 class="text-center">Insert informations</h2>
        
        <f:view>
 		<form class="form col-md-12 center-block">
@@ -115,8 +115,8 @@
 				</div>
 
 			<div class="form-group">
-			<h:commandButton
-						action="#{customerController.createCustomer}" value="SignUp"></h:commandButton>
+			<h:commandButton class="btn btn-primary btn-lg btn-block"
+						action="#{customerController.createCustomer}" value="Insert Customer"></h:commandButton>
 			</div>
 
 		

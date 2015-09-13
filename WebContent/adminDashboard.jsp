@@ -63,8 +63,11 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
                     </li>
                      <li>
                         <a  href="newProduct.xhtml"><i class="fa fa-desktop fa-3x"></i> Insert new Product</a>
+                    </li>
+                    <li>
+                        <a  href="newCustomer.xhtml"><i class="fa fa-desktop fa-3x"></i> Insert new Customer</a>
                     </li>	
-                      <li  >
+                      <li>
                         <a  href="table.html"><i class="fa fa-table fa-3x"></i> Find Customer by orderId</a>
                     </li>
                     <li  >
@@ -105,7 +108,7 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
                 </span>
                 <div class="text-box" >
                     <p class="main-text">products</p>
-                    <a href="productsCatalog.jsp" class="text-muted">catalog</a>
+                    <a href="productsCatalog.xhtml" class="text-muted">catalog</a>
                 </div>
              </div>
 		     </div>
