@@ -44,17 +44,15 @@ public class Customer {
 	public Customer(){
 	}
 	
-	public Customer(String firstName, String lastName, String email, String password, String phoneNumber,
-			        String dateOfBirth) {
+	public Customer(String firstName, String lastName, String email, String password, String phoneNumber,Date dateOfBirth, Date registrationDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.dateOfBirth = java.sql.Date.valueOf(dateOfBirth);
-        this.address = null;
-        this.registrationDate = new Date();
-   //     this.orders = new ArrayList<Order>();
+        this.dateOfBirth = dateOfBirth;
+       // this.address = null;
+        this.registrationDate = registrationDate;
 	}
 	
 	public void checkPassword(String password) throws Exception {

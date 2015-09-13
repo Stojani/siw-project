@@ -33,85 +33,95 @@
 		<form class="form col-md-12 center-block">
 		
 			<div class="form-group">				
-            <label for="inputFirstName" class="sr-only">FirstName</label>
-		    <h:inputText id="inputFirstName" styleClass="form-control"
+            <label for="firstName" class="sr-only"></label>
+		    <h:inputText id="firstName" styleClass="form-control"
 					value="#{customerController.firstName}"
 					required="true"  requiredMessage="First Name is mandatory">
 					<h:outputLabel value="First Name" />   </h:inputText>
-					<h:message for="inputFirstName" />
+					<h:message for="firstName" />
 		    </div>
             <div class="form-group">
-			<label for="inputLastName" class="sr-only">LastName</label>
-        <h:inputText id="inputLastName" styleClass="form-control"
+			<label for="lastName" class="sr-only"></label>
+        <h:inputText id="lastName" styleClass="form-control"
 					value="#{customerController.lastName}"
 					required="true"  requiredMessage="Last Name is mandatory">
 					<h:outputLabel value="Last Name" />   </h:inputText>  
-					<h:message for="inputLastName" />
+					<h:message for="lastName" />
 		</div> 
 
 			<div class="form-group">      
-        <label for="inputEmail" class="sr-only">Email</label>
-        <h:inputText id="inputEmail" styleClass="form-control"
+        <label for="email" class="sr-only"></label>
+        <h:inputText id="email" styleClass="form-control"
 		            value="#{customerController.email}"
 					required="true"  requiredMessage="Email is mandatory">
 					<h:outputLabel value="Email" />   </h:inputText> 
-					<h:message for="inputEmail" />
+					<h:message for="email" />
         </div>
         <div class="form-group">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <h:inputSecret id="inputPassword" styleClass="form-control"
+        <label for="password" class="sr-only"></label>
+        <h:inputSecret id="password" styleClass="form-control"
                        value="#{customerController.password}"
 		               required="true" requiredMessage="Password is mandatory">
 		               <h:outputLabel value="Password" /> </h:inputSecret>
-		               <h:message for="inputPassword" />
+		               <h:message for="password" />
         </div>
+        
+        <div class="form-group">
+				<label for="dateOfBirth" class="sr-only"></label>
+				<h:inputText id="dateOfBirth" styleClass="form-control"
+					value="#{customerController.dateOfBirth}"
+					required="true" requiredMessage="Date of Birth is mandatory">
+					<f:convertDateTime pattern="d-M-yyyy" />
+					<h:outputLabel value="Date of Birth (dd-mm-yyyy)" />   </h:inputText>
+					<h:message for="dateOfBirth" />
+				</div>
 
 			
 			<h2 class="text-center">Address informations</h2>
 				
 				<div class="form-group">
-				<label for="inputStreet" class="sr-only">Street</label>
-                <h:inputText id="inputStreet" styleClass="form-control"
+				<label for="street" class="sr-only"></label>
+                <h:inputText id="street" styleClass="form-control"
 		            value="#{customerController.street}"
 					required="true"  requiredMessage="Street is mandatory">
 					<h:outputLabel value="Street" />   </h:inputText> 
-					<h:message for="inputStreet" />
+					<h:message for="street" />
 				</div>
 				
 				<div class="form-group">
-				<label for="inputCity" class="sr-only">City</label>
-                <h:inputText id="inputCity" styleClass="form-control"
+				<label for="city" class="sr-only"></label>
+                <h:inputText id="city" styleClass="form-control"
 		            value="#{customerController.city}"
 					required="true"  requiredMessage="City is mandatory">
 					<h:outputLabel value="City" />   </h:inputText> 
-					<h:message for="inputCity" />
+					<h:message for="city" />
 				</div>
 				
 				<div class="form-group">
-				<label for="inputState" class="sr-only">State</label>
-                <h:inputText id="inputState" styleClass="form-control"
+				<label for="state" class="sr-only"></label>
+                <h:inputText id="state" styleClass="form-control"
 		            value="#{customerController.state}"
 					required="true"  requiredMessage="State is mandatory">
 					<h:outputLabel value="State" />   </h:inputText> 
-					<h:message for="inputState" />
+					<h:message for="state" />
 				</div>
 				
 				<div class="form-group">
-					<label for="inputZipcode" class="sr-only">Zipcode</label>
-                <h:inputText id="inputZipcode" styleClass="form-control"
+					<label for="zipcode" class="sr-only"></label>
+                <h:inputText id="zipcode" styleClass="form-control"
 		            value="#{customerController.zipcode}"
 					required="true"  requiredMessage="Zipcode is mandatory">
 					<h:outputLabel value="Zipcode" />   </h:inputText> 
-					<h:message for="inputZipcode" />
+					<h:message for="zipcode" />
 				</div>
 				
 				<div class="form-group">
-					<label for="inputCountry" class="sr-only">Country</label>
-                <h:inputText id="inputCountry" styleClass="form-control"
+					<label for="country" class="sr-only"></label>
+                <h:inputText id="country" styleClass="form-control"
 		            value="#{customerController.country}"
 					required="true"  requiredMessage="Country is mandatory">
 					<h:outputLabel value="Country" />   </h:inputText> 
-					<h:message for="inputCountry" />
+					<h:message for="country" />
 				</div>
 
 			<div class="form-group">

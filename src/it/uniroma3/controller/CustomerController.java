@@ -1,6 +1,10 @@
 package it.uniroma3.controller;
 
+import it.uniroma3.facade.AddressFacade;
+import java.sql.Date;
+
 import it.uniroma3.facade.CustomerFacade;
+import it.uniroma3.model.Address;
 import it.uniroma3.model.Customer;
 
 import javax.annotation.ManagedBean;
@@ -15,18 +19,32 @@ public class CustomerController {
 	
 	@EJB
 	private CustomerFacade customerFacade;
+	
+	@EJB
+	private AddressFacade addressFacade;
 
 	private String email;
 	private String password;
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
+	private Date dateOfBirth;
+	private Date registrationDate;
 	private Customer customer;
-	private String dateOfBirth;
-	private String errMessage;
+	private Address address;
+	private String street;
+	private String city;
+	private String state;
+	private String zipcode;
+	private String country;
+	private String errMessage; 
 	
-	public void createCustomer() {
-		this.customer=customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, dateOfBirth);
+	public String createCustomer() {
+		registrationDate= (Date) new java.util.Date();
+		this.customer=customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, dateOfBirth, registrationDate);
+		this.address=addressFacade.createAddress(street, city, state, zipcode, country);
+		this.customer.setAddress(this.address);
+		return "customerDetails.xhtml";
 	}
 	
 	public String Login() {
@@ -89,11 +107,11 @@ public class CustomerController {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
@@ -104,7 +122,7 @@ public class CustomerController {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
+	
 	public String getErrMessage() {
 		return errMessage;
 	}
@@ -112,5 +130,4 @@ public class CustomerController {
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
 	}
-	
 }

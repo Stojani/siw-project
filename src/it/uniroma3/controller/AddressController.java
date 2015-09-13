@@ -20,12 +20,12 @@ public class AddressController {
 	private String street;
 	private String city;
 	private String state;
-	private String zipCode;
+	private String zipcode;
 	private String country;	
 	private Address address;
 	
 	public void createAddress() {
-		this.address = addressFacade.createAddress(street, city, state, zipCode, country);
+		this.address = addressFacade.createAddress(street, city, state, zipcode, country);
 	}
 
 	public Long getId() {
@@ -60,12 +60,12 @@ public class AddressController {
 		this.state = state;
 	}
 
-	public String getZipCode() {
-		return zipCode;
+	public String getZipcode() {
+		return zipcode;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
 
 	public String getCountry() {

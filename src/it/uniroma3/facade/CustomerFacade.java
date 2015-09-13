@@ -2,13 +2,13 @@ package it.uniroma3.facade;
 
 import it.uniroma3.model.*;
 
+import java.sql.Date;
 import java.util.List;
-import java.util.Date;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
-
 
 @Stateless(name="customerFacade")
 public class CustomerFacade {
@@ -16,11 +16,8 @@ public class CustomerFacade {
 	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 
-	
-
-	public Customer createCustomer(String firstName, String lastName, String email, String password, String phoneNumber,
-	        String dateOfBirth) {
-		Customer customer = new Customer(firstName, lastName, email, password, phoneNumber, dateOfBirth);
+	public Customer createCustomer(String firstName, String lastName, String email, String password, String phoneNumber,Date dateOfBirth, Date registrationDate) {
+		Customer customer = new Customer(firstName, lastName, email, password, phoneNumber, dateOfBirth, registrationDate);
 		this.em.persist(customer);
 		return customer;
 	}
