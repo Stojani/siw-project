@@ -1,11 +1,13 @@
 package it.uniroma3.model;
 
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+//import javax.persistence.OneToOne;
 
 @Entity
 @NamedQuery(name = "findAllAddresses", query = "SELECT a FROM Address a")
@@ -29,6 +31,9 @@ public class Address {
 	
 	@Column(nullable = false)
 	private String country;
+	
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	private Customer customer;
 	
 	public Address(){
 	}

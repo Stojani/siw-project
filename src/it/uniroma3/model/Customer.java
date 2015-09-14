@@ -1,8 +1,21 @@
 package it.uniroma3.model;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-import java.util.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 @NamedQuery(name = "findAllCustomers", query = "SELECT c FROM Customer c")
@@ -18,7 +31,7 @@ public class Customer {
 	@Column(nullable = false)
 	private String lastName;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique=true)
 	private String email;
 	
 	@Column(nullable = false)
@@ -36,23 +49,22 @@ public class Customer {
 	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Address address;
 	
-//	@OneToMany(mappedBy="customer")
-//	@JoinColumn(name = "customer")
-//	@OrderBy("creationdate asc")
-//	private List<Order> orders;
+	@OneToMany(mappedBy="customer")
+	private List<Order> orders;
 
 	public Customer(){
 	}
 	
-	public Customer(String firstName, String lastName, String email, String password, String phoneNumber,Date dateOfBirth, Date registrationDate) {
+	public Customer(String firstName, String lastName, String email, String password, String phoneNumber,
+			      Date dateOfBirth,Date registrationDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.dateOfBirth = dateOfBirth;
-       // this.address = null;
+        this.dateOfBirth = dateOfBirth;    
         this.registrationDate = registrationDate;
+        this.orders= new ArrayList<Order>();
 	}
 	
 	public void checkPassword(String password) throws Exception {
@@ -61,9 +73,9 @@ public class Customer {
 		}
 	}
 	
-//	public void addOrder(Order order) {
-	//	this.orders.add(order);
-	//}
+	public void addOrder(Order order) {
+		this.orders.add(order);
+	}
 	
 	/*    GETTERS & SETTERS  */
 
@@ -139,13 +151,13 @@ public class Customer {
 		this.address = address;
 	}
 
-//	public List<Order> getOrders() {
-	//	return orders;
-	//}
+	public List<Order> getOrders() {
+		return orders;
+	}
 
-	//public void setOrders(List<Order> orders) {
-		//this.orders = orders;
-	//}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 
 	@Override
 	public int hashCode() {

@@ -2,7 +2,7 @@ package it.uniroma3.facade;
 
 import it.uniroma3.model.*;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -16,8 +16,10 @@ public class CustomerFacade {
 	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 
-	public Customer createCustomer(String firstName, String lastName, String email, String password, String phoneNumber,Date dateOfBirth, Date registrationDate) {
-		Customer customer = new Customer(firstName, lastName, email, password, phoneNumber, dateOfBirth, registrationDate);
+	public Customer createCustomer(String firstName, String lastName, String email, String password, String phoneNumber,		
+			Date dateOfBirth, Address address) {
+		Customer customer = new Customer(firstName, lastName, email, password, phoneNumber, dateOfBirth, new Date());
+		customer.setAddress(address);
 		this.em.persist(customer);
 		return customer;
 	}

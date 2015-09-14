@@ -1,17 +1,17 @@
 package it.uniroma3.controller;
 
-import it.uniroma3.facade.AddressFacade;
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 import it.uniroma3.facade.CustomerFacade;
+import it.uniroma3.facade.AddressFacade;
 import it.uniroma3.model.Address;
 import it.uniroma3.model.Customer;
+import it.uniroma3.model.Order;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-
-
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
@@ -29,21 +29,23 @@ public class CustomerController {
 	private String lastName;
 	private String phoneNumber;
 	private Date dateOfBirth;
-	private Date registrationDate;
+	private java.util.Date registrationDate;
+	private List<Order> orders;
+	
 	private Customer customer;
+	
 	private Address address;
 	private String street;
 	private String city;
 	private String state;
 	private String zipcode;
-	private String country;
+	private String country; 
 	private String errMessage; 
 	
 	public String createCustomer() {
-		registrationDate= (Date) new java.util.Date();
-		this.customer=customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, dateOfBirth, registrationDate);
+
 		this.address=addressFacade.createAddress(street, city, state, zipcode, country);
-		this.customer.setAddress(this.address);
+		this.customer=customerFacade.createCustomer(firstName, lastName, email, password, phoneNumber, dateOfBirth, this.address);
 		return "customerDetails.xhtml";
 	}
 	
@@ -130,4 +132,69 @@ public class CustomerController {
 	public void setErrMessage(String errMessage) {
 		this.errMessage = errMessage;
 	}
+
+	public Date getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 }
