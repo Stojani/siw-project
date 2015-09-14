@@ -76,7 +76,7 @@
             <div class="carousel-caption">
               <h1>WELCOME TO THE E-COMMERCE WEB SITE</h1>
               <p>If you're interested about our products and wont to make an order you've to be registered as a customer </p>
-              <p><a class="btn btn-lg btn-primary" href="signUpCustomer.jsp" role="button">Sign up now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="newCustomer.xhtml" role="button">Sign up now</a></p>
             </div>
           </div>
         </div>

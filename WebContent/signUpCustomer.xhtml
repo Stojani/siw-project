@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+<h:head>
+    <title>SignUp Customer</title>
+</h:head>
+<h:body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">E-COMMERCE</span>
+				</button>
+				<a class="navbar-brand" href="#">E-COMMERCE</a>
+				<a class="navbar-brand" href="index.jsp">Home</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><h:outputLink value="#"> Sign up</h:outputLink>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+ <div class="container">
+ <div class="modal-dialog">
+       <h2 class="text-center">Sign up</h2>
+		<form class="form col-md-12 center-block">
+		
+			<div class="form-group">				
+            <strong>First Name:</strong><br></br>
+			<h:inputText styleClass="form-control"
+			       value="#{customerController.firstName}" required="true"
+				requiredMessage="First name is mandatory" id="firstName" />
+			<h:message for="firstName" />
+		    </div>
+            <div class="form-group">
+			<strong>Last Name:</strong><br></br>
+			<h:inputText styleClass="form-control"
+			       value="#{customerController.lastName}" required="true"
+				requiredMessage="Last name is mandatory" id="lastName" />
+			<h:message for="lastName" />
+		</div> 
+
+			<div class="form-group">      
+            <strong>Email:</strong><br></br>
+			<h:inputText styleClass="form-control"
+			       value="#{customerController.email}" required="true"
+				requiredMessage="Email is mandatory" id="email" />
+			<h:message for="email" />
+        </div>
+        <div class="form-group">
+        <strong>Password:</strong><br></br>
+			<h:inputSecret styleClass="form-control"
+			       value="#{customerController.password}" required="true"
+				requiredMessage="Password is mandatory" id="password" />
+			<h:message for="password" />
+        </div>
+        <div class="form-group">      
+        <strong>Phone Number:</strong><br></br>
+			<h:inputText styleClass="form-control"
+			       value="#{customerController.phoneNumber}" required="true"
+				requiredMessage="Phone Number is mandatory" id="phoneNumber" />
+			<h:message for="phoneNumber" />
+		</div>			
+        <div class="form-group">
+				<strong>Date of Birth: (yyyy-MM-dd)</strong><br></br>
+			<h:inputText styleClass="form-control"
+			       id="dateOfBirth" value="#{customerController.dateOfBirth}"
+				required="true" requiredMessage="Date of Birth is mandatory">
+				<f:convertDateTime pattern="yyyy-MM-dd" />
+			</h:inputText>
+			<h:message for="dateOfBirth" />
+				</div>
+
+			<h2 class="text-center">Address informations</h2>
+				
+				<div class="form-group">
+				<strong>Street:</strong><br></br>
+			    <h:inputText styleClass="form-control"
+			           value="#{customerController.street}" required="true"
+				    requiredMessage="Street is mandatory" id="street" />
+			    <h:message for="street" />
+				</div>
+				
+				<div class="form-group">
+				<strong>City:</strong><br></br>
+			    <h:inputText styleClass="form-control"
+			           value="#{customerController.city}" required="true"
+				     requiredMessage="City is mandatory" id="city" />
+			    <h:message for="city" />
+				</div>
+				
+				<div class="form-group">
+				<strong>State:</strong><br></br>
+			    <h:inputText styleClass="form-control"
+			           value="#{customerController.state}" required="true"
+				     requiredMessage="State is mandatory" id="state" />
+			    <h:message for="state" />
+				</div>
+				
+				<div class="form-group">
+					<strong>Zipcode:</strong><br></br>
+			        <h:inputText styleClass="form-control"
+			               value="#{customerController.zipcode}" required="true"
+				        requiredMessage="Zipcode is mandatory" id="zipcode" />
+			        <h:message for="zipcode" />
+				</div>
+				
+				<div class="form-group">
+					<strong>Country:</strong><br></br>
+			       <h:inputText styleClass="form-control" 
+			              value="#{customerController.country}" required="true"
+				      requiredMessage="Country is mandatory" id="country" />
+			       <h:message for="country" />
+				</div>
+
+			<div class="form-group">
+			<h:commandButton class="btn btn-primary btn-lg btn-block"
+						action="#{customerController.createCustomer}" value="SignUp">
+		    </h:commandButton>
+			</div>
+     </form>
+	</div>
+	</div>
+
+</h:body>
+</html>

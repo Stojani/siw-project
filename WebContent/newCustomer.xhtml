@@ -18,7 +18,7 @@
 					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">E-COMMERCE</span>
 				</button>
-				<a class="navbar-brand" href="#">E-COMMERCE</a>
+				<a class="navbar-brand" >E-COMMERCE</a>
 				<a class="navbar-brand" href="index.jsp">Home</a>
 			</div>
 			<div class="collapse navbar-collapse"
@@ -56,7 +56,7 @@
 		</div>
 		<div>
 			<strong>Password:</strong><br></br>
-			<h:inputText value="#{customerController.password}" required="true"
+			<h:inputSecret value="#{customerController.password}" required="true"
 				requiredMessage="Password is mandatory" id="password" />
 			<h:message for="password" />
 		</div>
@@ -106,7 +106,7 @@
 			<h:message for="country" />
 		</div><br></br>
 		<h:commandButton class="btn btn-primary" value="Submit"
-			action="#{customerController.createCustomer}" />
+			action="#{customerController.createCustomer}"/>
 	</h:form>     
 	</div>
 </h:body>
