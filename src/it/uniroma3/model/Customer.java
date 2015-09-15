@@ -67,10 +67,11 @@ public class Customer {
         this.orders= new ArrayList<Order>();
 	}
 	
-	public void checkPassword(String password) throws Exception {
-		if (!this.password.equals(password)) {
-			throw new Exception();
-		}
+	public boolean checkPassword(String password) {
+		if (this.password.equals(password))
+		    return true;
+	    else 
+	    	return false;
 	}
 	
 	public void addOrder(Order order) {

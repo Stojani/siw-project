@@ -40,7 +40,8 @@ public class CustomerController {
 	private String state;
 	private String zipcode;
 	private String country; 
-	private String errMessage; 
+	private String errMessage;
+	private boolean esito;
 	
 	public String createCustomer() {
 
@@ -49,23 +50,23 @@ public class CustomerController {
 		return "customerDetails.xhtml";
 	}
 	
-	public String Login() {
-		try {
-			 Customer customer = customerFacade.getCustomerByEmail(this.email);
-			 customer.checkPassword(this.password);
-			 this.customer = customer;
-		} catch (Exception e) {
-			errMessage = "Invalid credentials";
-			return "loginCustomer.jsp";
-		}
-		return "customerHome.xhtml";
+	public String login() {
+		
+			 Customer customer = customerFacade.getCustomerByEmail(email);
+			 esito= customer.checkPassword(password);
+			 
+			 if (esito=true) {
+			    this.customer = customer;
+			    return "customerHome.xhtml";}
+			 else 
+				 return "loginCustomer.xhtml";
 	}
 	
-	public String Logout(){
+	public String logout(){
 		this.customer = null;
 		this.email = null;
 		this.password = null;
-		return "index";
+		return "index.jsp";
 	}
 
 	public String getEmail() {
@@ -196,5 +197,9 @@ public class CustomerController {
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
+	
+	public boolean getEsito() {
+		return esito;
+	}	
 
 }

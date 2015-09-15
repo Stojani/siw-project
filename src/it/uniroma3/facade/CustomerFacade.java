@@ -8,6 +8,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless(name="customerFacade")
@@ -29,7 +30,8 @@ public class CustomerFacade {
 	}
 	
 	public Customer getCustomerByEmail(String email) {
-		return this.em.find(Customer.class, email);
+		TypedQuery<Customer> q = em.createQuery("SELECT c FROM Customer c where c.email = :email" , Customer.class);
+		return  q.setParameter("email",email).getSingleResult();
 	}
 	
 	public List<Customer> getAllCustomers() {	
