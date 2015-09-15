@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+    <link rel="stylesheet"
+	   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+    <link rel="stylesheet"
+	   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Login</title>	   
+</h:head>
+<h:body>
+     <nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">E-COMMERCE</span>
+				</button>
+				<a class="navbar-brand" >E-COMMERCE</a>
+				<a class="navbar-brand" href="index.jsp">Home</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><h:outputLink value="#">Login</h:outputLink>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="text-center">
+  	<h1 class="page-header"><font size="5">Login </font></h1>
+    </div>
+    <div class="container" style="width:50%; margin:0 auto">
+		<h:form class="form col-md-12 center-block" style="background-color:#54FF9F">
+		 <div>
+			<strong>Email:</strong><br></br>
+			 <h:inputText value="#{administratorController.email}" required="true"
+				requiredMessage="Email is mandatory" id="email" />
+			 <h:message for="email" />
+		 </div>
+		 <div>
+			<strong>Password:</strong><br></br>
+			<h:inputSecret value="#{administratorController.password}" required="true"
+				requiredMessage="Password is mandatory" id="password" />
+			<h:message for="password" />
+		</div> <br></br>
+		<h:commandButton class="btn btn-primary btn-lg btn-block" value="Login"
+              action="#{administratorController.login}"/>
+       </h:form>
+    </div>          	
+</h:body>	  
+</html>        

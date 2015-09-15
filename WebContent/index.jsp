@@ -42,13 +42,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administration Area <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="loginAdministrator.jsp">Login as administrator</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="loginAdministrator.xhtml">Login as administrator</a></li>
                   </ul>
                 </li>
               </ul>
@@ -81,7 +75,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img class="second-slide" src="http://thenextweb.com/wp-content/blogs.dir/1/files/2013/12/customer-people.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Login</h1>
@@ -91,7 +85,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <img class="third-slide" src="http://www.pymecontrol.cl/img/slide/slides/4.jpg?1438128014270" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Browse our catalog</h1>

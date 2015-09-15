@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.TypedQuery;
 
 
 @Stateless(name="orderFacade")
@@ -14,19 +15,34 @@ public class OrderFacade {
 	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
-	public Order createOrder(Long id) {
+	public Order startOrder(Long id) {
 		Customer customer = this.em.find(Customer.class, id);
 		Order order = new Order(customer);
-	//	customer.addOrder(order);
-		this.em.persist(order);
-		this.em.merge(customer);
 		return order;
+	}
+	
+	public Order startOrder(Customer customer) {
+		Order order = new Order (customer);
+		return order;
+		
+	}
+	
+	public Order confirmOrder(Order order) {
+		em.persist(order);
+		return order;
+		
 	}
 	
 	public Order getOrder(Long id) {
 		Order order = this.em.find(Order.class, id);
 		order.getOrderLines();				
 		return order;
+	}
+	
+	public List<OrderLine> getAllOrderLines(Order order){
+		TypedQuery<OrderLine> q= em.createQuery("SELECT ol from OrderLine ol WHERE ol.order = :order", OrderLine.class);
+		List<OrderLine> orderLines= q.getResultList();
+		return orderLines;
 	}
 	
 	public List<Order> getAllOrders() {

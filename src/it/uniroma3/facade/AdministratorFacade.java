@@ -29,6 +29,12 @@ public class AdministratorFacade {
 		return administrator;
 	}
 	
+	public Administrator getAdminByEmail(String email) {
+		TypedQuery<Administrator> q = em.createQuery("SELECT a FROM Administrator a where a.email = :email" , Administrator.class);
+		return  q.setParameter("email",email).getSingleResult();
+	}
+	
+	
 	public Administrator getAdministrator(String email, String password)
 			throws Exception {
 		TypedQuery<Administrator> query = em.createQuery(

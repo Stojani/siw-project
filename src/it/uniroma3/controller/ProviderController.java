@@ -6,9 +6,9 @@ import it.uniroma3.facade.ProviderFacade;
 import it.uniroma3.model.Address;
 import it.uniroma3.model.Provider;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 

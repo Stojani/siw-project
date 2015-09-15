@@ -39,11 +39,11 @@ public class Administrator {
 		this.password = password;
 	}
 
-	public void checkPassword(String password) 
-			throws Exception {
-		if (!this.password.equals(password)) {
-			throw new Exception();
-		}
+	public boolean checkPassword(String password) {
+		if (this.password.equals(password))
+		    return true;
+	    else 
+	    	return false;
 	}
 	
 	/* GETTERS & SETTERS */

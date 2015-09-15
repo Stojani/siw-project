@@ -9,9 +9,9 @@ import it.uniroma3.model.Order;
 import it.uniroma3.model.OrderLine;
 import it.uniroma3.model.Product;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 
@@ -38,8 +38,8 @@ public class OrderLineController {
 	
 	public String createOrderLine() {
 		orderLineFacade.createOrderLine(this.order.getId(),this.product, quantity);
-		productFacade.getAllProducts();
-		return "chooseProducts";
+		this.order.addOrderLine(orderLine);
+		return "newOrder.xhtml";
 	}
 	
 	public String updateOrderLineQuantity() {

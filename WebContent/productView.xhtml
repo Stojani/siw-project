@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Product</title>
+</h:head>
+<body>
+
+<h1>${productController.product.name}</h1>
+<h2>Details</h2>
+<div>Code: ${productController.product.code}</div>
+<div>Price: ${productController.product.price}</div>
+<div>Description: ${productController.product.description}</div> <br></br>
+<div>If you are interested for this product insert the quantity you desire and add to your order</div><br>
+<div><strong>Desired quantity:</strong><br></br>
+<h:inputNumber value="#{orderLineController.quantity}" /></div><br>
+<h:commandButton class="btn btn-lg btn-primary" value="add to order"
+			action="#{orderLineController.createOrderLine}"/><br></br>
+<div>Do you want another product?</div>			
+<h:commandButton class="btn btn-lg btn-primary"	value="add another product"
+                 href="products.xhtml"/> <br></br>
+                 
+ <h:commandButton class="btn btn-lg btn-primary"	value="go to my order"
+                 href="products.xhtml"/>                	
+			
+
+</body>
+</html>

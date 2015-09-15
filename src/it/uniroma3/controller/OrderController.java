@@ -7,10 +7,12 @@ import it.uniroma3.facade.OrderFacade;
 import it.uniroma3.facade.ProductFacade;
 import it.uniroma3.model.Customer;
 import it.uniroma3.model.Order;
+import it.uniroma3.model.OrderLine;
+import it.uniroma3.model.Product;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 @SessionScoped
@@ -25,19 +27,31 @@ public class OrderController {
 	
 	private Order order;
 	private List<Order> orders;
+	private List<OrderLine> orderLines;
 	private Customer customer;
 	
-	public String createOrder() {
-		Order order = orderFacade.createOrder(this.customer.getId());
+	public String startOrder() {
+		Order order = orderFacade.startOrder(this.customer.getId());
 		this.order = order;
-		productFacade.getAllProducts();
-		return "add products to order";
+		return "products.xhtml";
+	}
+	
+	public String startOrder(Customer customer) {
+		Order order = orderFacade.startOrder(this.customer);
+		this.order= order;
+		return "producst.xhtml";
 	}
 
-	public String endOrder() {
-		Order order = orderFacade.getOrder(this.order.getId());
+	public String confirmOrder() {
+		Order order = orderFacade.confirmOrder(this.order);
 		this.order=order;
-		return "confirm Order";
+		this.customer.addOrder(order);
+		return "customerHome.xhtml";
+	}
+	
+public List<OrderLine> listOrderLines() {
+		this.orderLines = orderFacade.getAllOrderLines(this.order);
+		return orderLines; 
 	}
 	
 	//public String confirmOrder() {

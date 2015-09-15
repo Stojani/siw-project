@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>New Order</title>
+</h:head>
+<h:body>
+
+	<nav class="navbar navbar-inverse navbar-static-top" style="background-color:#9FB6CD">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">E-COMMERCE</span>
+				</button>
+				<a class="navbar-brand" >E-COMMERCE</a>
+				<a class="navbar-brand" href="customerHome.xhtml">My Home</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><h:outputLink value="#"> New Order</h:outputLink>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" style="width:50%; margin:0 auto">
+	<h:commandButton class="btn btn-lg btn-primary" value="Start a new Order now" href="products.xhtml"
+                                 action="#{orderController.startOrder()}"/>
+    </div>                             
+
+</h:body>
+</html>

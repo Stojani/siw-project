@@ -42,7 +42,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">customer: ${customerController.firstName} ${customerController.lastName} <a href="index.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;">customer: ${customerController.customer.firstName} ${customerController.customer.lastName} <a href="index.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -57,12 +57,12 @@ font-size: 16px;">customer: ${customerController.firstName} ${customerController
                         <a class="active-menu"  href="customerHome.xhtml"><i class="fa fa-dashboard fa-3x"></i> My Home</a>
                     </li>
                      <li>
-                        <a  href="customerDetailsHome.xhtml"><i class="fa fa-desktop fa-3x" 
+                        <a  href="customerInfo.xhtml"><i class="fa fa-desktop fa-3x" 
                             style="background-color:#9FB6CD"></i> See my Details</a>
                     </li>
                     <li>
-                        <a  href="newOrder.xhtml"><i class="fa fa-desktop fa-3x"
-                            style="background-color:#9FB6CD"></i> Make a new Order</a>
+                        <a  href="customerOrders.xhtml"><i class="fa fa-desktop fa-3x" 
+                            style="background-color:#9FB6CD"></i>My Orders</a>
                     </li>	
                       <li>
                         <a  href="table.html"><i class="fa fa-table fa-3x"
@@ -94,9 +94,11 @@ font-size: 16px;">customer: ${customerController.firstName} ${customerController
                 <span class="icon-box bg-color-red set-icon">
                     <i class="fa fa-envelope-o"></i>
                 </span>
-                <div class="text-box" >
-                    <p class="main-text">Confirmed</p>
-                    <p class="text-muted">Orders</p>
+                <div> 
+                  <div class="text-box" >
+                    <p class="main-text">Make</p>
+                    <a href="newOrder.xhtml" class="text-muted">a new order</a>
+                </div>
                 </div>
              </div>
 		     </div>
