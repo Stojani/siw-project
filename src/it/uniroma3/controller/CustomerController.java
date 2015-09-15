@@ -51,14 +51,14 @@ public class CustomerController {
 	
 	public String Login() {
 		try {
-			 Customer customer = customerFacade.getCustomerByEmail(email);
-			 customer.checkPassword(password);
+			 Customer customer = customerFacade.getCustomerByEmail(this.email);
+			 customer.checkPassword(this.password);
 			 this.customer = customer;
 		} catch (Exception e) {
 			errMessage = "Invalid credentials";
 			return "loginCustomer.jsp";
 		}
-		return "customerArea.jsp";
+		return "customerHome.xhtml";
 	}
 	
 	public String Logout(){

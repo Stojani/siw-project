@@ -1,25 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
-<!DOCTYPE html >
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+    <link rel="stylesheet"
+	   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+    <link rel="stylesheet"
+	   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></link>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>My Home</title>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/wow.min.js"></script>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="e-commerce web site">
-    <meta name="author" content="Stojani">
-    
-<title>Admin Dashboard</title>
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
          <!-- FONTAWESOME STYLES-->
     <link href="bootstrap/css/font-awesome.css" rel="stylesheet" />
      <!-- MORRIS CHART STYLES-->
@@ -34,7 +29,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0; background-color:#9FB6CD">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -42,36 +37,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Administrator</a> 
+                <a class="navbar-brand">Customer</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;">customer: ${customerController.firstName} ${customerController.lastName} <a href="index.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+            <div class="sidebar-collapse" >
+                <ul class="nav" id="main-menu" style="background-color:#9FB6CD">
 				<li class="text-center">
                     <img src="assets/img/find_user.png" class="user-image img-responsive"/>
 					</li>
 				
 					
                     <li>
-                        <a class="active-menu"  href="adminDashboard.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="customerHome.xhtml"><i class="fa fa-dashboard fa-3x"></i> My Home</a>
                     </li>
                      <li>
-                        <a  href="newProduct.xhtml"><i class="fa fa-desktop fa-3x"></i> Insert new Product</a>
+                        <a  href="customerDetailsHome.xhtml"><i class="fa fa-desktop fa-3x" 
+                            style="background-color:#9FB6CD"></i> See my Details</a>
                     </li>
                     <li>
-                        <a  href="newCustomer.xhtml"><i class="fa fa-desktop fa-3x"></i> Insert new Customer</a>
+                        <a  href="newOrder.xhtml"><i class="fa fa-desktop fa-3x"
+                            style="background-color:#9FB6CD"></i> Make a new Order</a>
                     </li>	
                       <li>
-                        <a  href="table.html"><i class="fa fa-table fa-3x"></i> Find Customer by orderId</a>
+                        <a  href="table.html"><i class="fa fa-table fa-3x"
+                            style="background-color:#9FB6CD"></i> Find Customer by orderId</a>
                     </li>
                     <li  >
-                        <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Evade an order </a>
+                        <a  href="form.html"><i class="fa fa-edit fa-3x"
+                            style="background-color:#9FB6CD"></i> Evade an order </a>
                     </li>									                  
                 </ul>
                <br/>
@@ -83,8 +82,8 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Admin Dashboard</h2>   
-                        <h5>Welcome administrator , Love to see you back. </h5>
+                     <h2>Customer Home</h2>   
+                        <h5>Welcome customer , Glade to see you back. </h5>
                     </div>
                 </div>              
                  <!-- /. ROW  -->
@@ -96,7 +95,7 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
                     <i class="fa fa-envelope-o"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">database</p>
+                    <p class="main-text">Confirmed</p>
                     <p class="text-muted">Orders</p>
                 </div>
              </div>
@@ -118,8 +117,8 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
                     <i class="fa fa-bell-o"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">products quantity</p>
-                    <p class="text-muted">Stock</p>
+                    <p class="main-text">messages</p>
+                    <p class="text-muted">1</p>
                 </div>
              </div>
 		     </div>
@@ -129,8 +128,8 @@ font-size: 16px;">Admin: Stojani &nbsp; <a href="index.html" class="btn btn-dang
                     <i class="fa fa-rocket"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">Orders</p>
-                    <p class="text-muted">Pending</p>
+                    <p class="main-text">News</p>
+                    <p class="text-muted">0</p>
                 </div>
              </div>
 		     </div>

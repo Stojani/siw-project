@@ -38,15 +38,10 @@
             </div>
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="signUpCustomer.jsp">Register</a></span>
+              <span class="pull-right"><a href="newCustomer.xhtml">Register</a></span>
             </div>
           </form>
-      </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>	
-      </div>
+      </div>    
   </div>
   </div>
 </div>

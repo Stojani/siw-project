@@ -86,7 +86,7 @@
             <div class="carousel-caption">
               <h1>Login</h1>
               <p>If you're already registered as an our customer you can login here</p>
-              <p><a class="btn btn-lg btn-primary" href="loginCustomer.jsp" role="button">Login now</a></p>
+              <p><a class="btn btn-lg btn-primary" href="loginCustomer.xhtml" role="button">Login now</a></p>
             </div>
           </div>
         </div>
