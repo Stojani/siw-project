@@ -15,12 +15,6 @@ public class OrderFacade {
 	@PersistenceContext(unitName="unit-siwProject")
 	private EntityManager em;
 	
-	public Order startOrder(Long id) {
-		Customer customer = this.em.find(Customer.class, id);
-		Order order = new Order(customer);
-		return order;
-	}
-	
 	public Order startOrder(Customer customer) {
 		Order order = new Order (customer);
 		return order;

@@ -31,12 +31,6 @@ public class OrderController {
 	private Customer customer;
 	
 	public String startOrder() {
-		Order order = orderFacade.startOrder(this.customer.getId());
-		this.order = order;
-		return "products.xhtml";
-	}
-	
-	public String startOrder(Customer customer) {
 		Order order = orderFacade.startOrder(this.customer);
 		this.order= order;
 		return "producst.xhtml";
